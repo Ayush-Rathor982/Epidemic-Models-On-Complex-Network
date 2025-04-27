@@ -1,0 +1,121 @@
+Title: Epidemic Models On Complex Network,  P. Pradhan, A. Rathor.
+
+It has two types of models:
+A. Classical Models
+B. GNN Models
+
+========================================================================================
+========================================================================================
+
+A. Classical Models : SI, SIR, SIS models
+-------------------------------------------------------------------------
+                              START
+-------------------------------------------------------------------------
+
+Notations:-
+N - Number of nodes(population size, 10 to 1000)
+S - suseptible state(0 to 1)
+X - Infected state(0 to 1)
+R - Recovey state(0 to 1)
+p - Probability of edge creation(0 to 1)
+m - Number of edges to attach from a new node to existing nodes
+A - Adjacency matrix
+ER - Erdos-Reyni metwork
+SF - Scale-Free network  
+beta - infection rate
+gama - recovery rate
+k - Average degree
+
+
+code files:-
+generateERmatrix.py
+generateSFmatrix.py
+SI_model.py
+SIR_model.py
+SIS_model.py
+SI_time_depnd_model.py
+SIR_time_depnd_model.py
+SIS_time_depnd_model.py
+
+
+command to run code file:  "python file_name.py"
+
+Input code files takes:
+generateERmatrix.py         -->      N,p
+generateSFmatrix.py         -->      N,m
+SI_model.py                 -->      N,beta
+SIR_model.py                -->      N,beta,gama
+SIS_model.py                -->      N,beta,gama
+SI_time_depnd_model.py      -->      A,beta
+SIR_time_depnd_model.py     -->      A,beta,gama
+SIS_time_depnd_model.py     -->      A,beta,gama
+
+
+output code files generates:
+generateERmatrix.py         -->      A (ER adjacency matrix)
+generateSFmatrix.py         -->      A (SF adjacency matrix)
+SI_model.py                 -->      plot that shows S and I behaviour
+SIR_model.py                -->      plot that shows S, I and R behaviour
+SIS_model.py                -->      plot that shows S and I behaviour
+SI_time_depnd_model.py      -->      plot that shows S and I behaviour with degree distribution 
+SIR_time_depnd_model.py     -->      plot that shows S, I and R behaviour with degree distribution
+SIS_time_depnd_model.py     -->      plot that shows S and I behaviour with degree distribution
+
+-------------------------------------------------------------------------
+                               END
+-------------------------------------------------------------------------
+
+
+B. GNN Models : Trained on Simple and Complex Networks
+-------------------------------------------------------------------------
+                              START
+-------------------------------------------------------------------------
+
+Notations:-
+N - Number of nodes(population size, 10 to 1000)
+G - (V, E, Φ, Ω) Network Structure
+X - (X1, . . . , XT ) Node states at each time step
+Y - (Y1, . . . , YT ) Predicted outcome
+E - {eij | vj is connected to vi} Edge set
+MLP -  multilayer perceptron
+A - Adjacency matrix
+ER - Erdos-Reyni metwork
+SF - Scale-Free network  
+r - Pearson correlation coefficient(-1 to 1)
+
+
+code files:-
+RNN_Prediction.py                       
+RNN_GAT_Prediction.py                   
+GNN_prediction_on_BA_network.py       
+GNN_prediction_on_ER_network.py         
+GNN_performance_on_Simple_Network.py     
+GNN_performance_on_Complex_Network.py    
+
+
+command to run code file:  "python file_name.py"
+
+Input code files takes:
+RNN_Prediction.py                        -->       N,X
+RNN_GAT_Prediction.py                    -->       N,X,G,E
+GNN_prediction_on_BA_network.py          -->       N,X,G,E,A(BA network)
+GNN_prediction_on_ER_network.py          -->       N,X,G,E,A(ER network)
+GNN_performance_on_Simple_Network.py     -->       N,X,G
+GNN_performance_on_Complex_Network.py    -->       N,X,G
+
+
+output code files generates:
+RNN_Prediction.py                        -->       Y, plot that shows time series prediction of SIS data
+RNN_GAT_Prediction.py                    -->       Y, plot that shows time series prediction of SIS data
+GNN_prediction_on_BA_network.py          -->       Y, r, plot that shows difference between true and predicted value on BA network
+GNN_prediction_on_ER_network.py          -->       Y, r, plot that shows difference between true and predicted value on ER network
+GNN_performance_on_Simple_Network.py     -->       Y, plot that shows transition probabilities on simple contagion dynamics
+GNN_performance_on_Complex_Network.py    -->       Y, plot that shows transition probabilities on Complex contagion dynamics
+
+-------------------------------------------------------------------------
+                               END
+-------------------------------------------------------------------------
+
+
+========================================================================================
+========================================================================================
