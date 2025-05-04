@@ -1,0 +1,4 @@
+* La codificación usada para los ficheros CSV es UTF8 sin BOM.
+* Los campos se separan usando comas (,)
+* El contenido de cada campo aparece entre comillas dobles (")
+* Los números utilizan la coma para la separación de decimales (codificación española).
